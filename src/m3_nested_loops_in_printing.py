@@ -101,9 +101,10 @@ def triangle_of_stars(r):
        *****
     Precondition:  r is a non-negative integer.
     """
-    for j in range(1):
-        for k in range(r):
-            print('*' * (k+1))
+    for j in range(r):
+        for k in range(j+1):
+            print('*', end='')
+        print()
     # ------------------------------------------------------------------
     # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above).
@@ -156,9 +157,10 @@ def decreasing_exclamation_marks(m, n):
        !!
     Precondition:  m and n are positive integers with m >= n.
     """
-    for j in range(1):
-        for k in range(m-n+1):
-            print('!' * (m-k))
+    for j in range(m-n+1):
+        for k in range(m-j):
+            print('!', end='')
+        print()
     # ------------------------------------------------------------------
     # DONE: 4. Implement and test this function.
     #          Some tests are already written for you (above).
@@ -201,16 +203,15 @@ def alternating_brackets(m, n):
        []
     Precondition:  m and n are positive integers with m >= n.
     """
-    for j in range(1):
-        for k in range(m-n+1):
-            if m % 2 == 0:
-                print('[]' * (m//2))
-                m = m - 1
+    for j in range(m-n+1):
+        for k in range(m-j):
+            if k % 2 == 0:
+                print('[', end='')
             else:
-                print('[]' * (m//2), '[')
-                m = m - 1
+                print(']', end='')
+        print()
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
